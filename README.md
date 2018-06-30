@@ -1,2 +1,2 @@
-# dotnet-middleware
-Examples &amp; Solutions - .NET Middleware (25 Jun - 13 Jul)
+# Mastery program - .NET Middleware
+## Ejemplos y soluciones (Curso impartido del 25 Jun al 13 Jul)
