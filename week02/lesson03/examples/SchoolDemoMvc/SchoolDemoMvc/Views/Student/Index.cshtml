@@ -1,0 +1,49 @@
+﻿@model List<SchoolDemoMvc.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Administrar estudiantes</h2>
+
+<h3>Lista de estudiantes</h3>
+
+<div class="container">
+    <div class="row justify-content-end">
+        <div class="col-md-12 col-md-offset-11">
+            @Html.ActionLink("Agregar", "Create")
+        </div>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Matrícula</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>@item.Matricula</td>
+                    <td>@item.Nombre</td>
+                    <td>@item.Edad</td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { matricula = item.Matricula })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Eliminar", "Delete", new { matricula = item.Matricula })
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

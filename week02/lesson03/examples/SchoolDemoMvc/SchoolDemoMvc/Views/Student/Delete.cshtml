@@ -1,0 +1,28 @@
+﻿@model SchoolDemoMvc.Models.Student
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>Eliminar</h2>
+    @using (Html.BeginForm("Delete", "Student"))
+    {
+        @Html.HiddenFor(m => m.Matricula)
+        @Html.HiddenFor(m => m.Nombre)
+        @Html.HiddenFor(m => m.Edad)
+
+        <div class="form-group">
+            <p>
+                Está seguro que desea eliminar al estudiante con matrícula @Model.Matricula ?
+            </p>
+        </div>
+
+        <p>
+            @Html.ActionLink("Cancelar", "Index")
+            <input type="submit" value="Sí, eliminar" />
+        </p>
+    }
+</div>
+
+
