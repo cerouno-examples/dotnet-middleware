@@ -1,0 +1,25 @@
+﻿@model SchoolWeb.Models.Student
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>Eliminar</h2>
+    @using (Html.BeginForm("Delete", "Students"))
+    {
+        @Html.HiddenFor(m => m.Id)
+
+        <div class="form-group">
+            <p>
+                Está seguro que desea eliminar al estudiante con ID @Model.Id ?
+            </p>
+        </div>
+
+        <p>
+            @Html.ActionLink("Cancelar", "Index")
+            <input type="submit" value="Sí, eliminar" />
+        </p>
+    }
+</div>
+
+

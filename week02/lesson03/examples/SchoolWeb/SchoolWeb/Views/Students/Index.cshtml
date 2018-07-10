@@ -1,0 +1,51 @@
+﻿@model List<SchoolWeb.Models.Student>
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Administrar estudiantes</h2>
+
+<h3>Lista de estudiantes</h3>
+
+<div class="container">
+    <div class="row justify-content-end">
+        <div class="col-md-12 col-md-offset-11">
+            @Html.ActionLink("Agregar", "Save")
+        </div>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Curso</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.LastName</td>
+                        <td>@item.Age</td>
+                        <td>@item.Course.Name</td>
+                        <td>
+                            @Html.ActionLink("Editar", "Save", new { id = item.Id })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
