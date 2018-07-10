@@ -12,7 +12,8 @@ namespace SchoolWeb.App_Start
     {
         public MappingProfile()
         {
-            CreateMap<Course, CourseDTO>();
+            CreateMap<Course, CourseDTO>()
+                .ForMember(c => c.Id, opt => opt.Ignore());
             CreateMap<CourseDTO, Course>();
         }
     }
